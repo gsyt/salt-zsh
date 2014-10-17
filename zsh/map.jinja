@@ -1,0 +1,8 @@
+{% set zsh = salt['grains.filter_by']( {
+  'Debian': {
+    'package': 'zsh',
+  },
+  'RedHat': {
+    'package': 'zsh',
+  },
+}, merge=salt['pillar.get']('zsh:lookup')) %}
